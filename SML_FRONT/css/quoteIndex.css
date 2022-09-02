@@ -1,0 +1,162 @@
+#quoteIndexTitle {
+    font-size:2.5em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: white;
+}
+
+#quoteIndexTitle2 {
+    font-size:1em;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+}
+
+#quoteIndexTitle a {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #FB667A;
+    text-decoration: none;
+}
+
+.quoteIndexContainer th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: #185875;
+}
+
+.quoteIndexContainer td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+    color: #c7ddef;
+}
+
+.quoteIndexContainer {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+}
+
+.quoteIndexContainer td, .quoteIndexContainer th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+}
+
+/* Background-color of the odd rows */
+.quoteIndexContainer tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.quoteIndexContainer tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.quoteIndexContainer th {
+    background-color: #1F2739;
+}
+
+.quoteIndexContainer td:first-child { color: #FB667A; }
+
+.quoteIndexContainer tr:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+tr td:first-child {
+    cursor: pointer;
+}
+
+.toggleButton{
+    margin: 1em;
+    text-align: center;
+}
+
+.toggleButton__body{
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 2.5em;
+    cursor: pointer;
+    transition: .1s ease-in all;
+    border-radius: 1.25em;
+    background: #ddd linear-gradient(135deg, #dedede, #ddd);
+    box-shadow: 1px 1px 3px rgba(0,0,0,.3) inset;
+}
+
+.toggleButton__body:before{
+    position: absolute;
+    top: .05em;
+    left: 1em;
+    right: 1em;
+    content: "OFF";
+    font-size: .75em;
+    line-height: 3.33em;
+    text-align: right;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #aaa;
+}
+
+.toggleButton__body:after{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: calc(2.5em - 4px);
+    height: calc(2.5em - 4px);
+    content: "";
+    transition: .1s ease-in all;
+    border-radius: 1.25em;
+    background: #fff linear-gradient(135deg, #f0f0f0, #fff 75%);
+    box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+}
+
+.toggleButton__checkbox{
+    display: none;
+}
+
+:checked + .toggleButton__body{
+    background: #7ed321 linear-gradient(135deg, #4037c0, #6b4fce);;
+}
+
+:checked + .toggleButton__body:before{
+    content: "ON";
+    text-align: left;
+    color: #fff;
+}
+
+:checked + .toggleButton__body:after{
+    left: calc(2.5em + 2px);
+}
+
+.top {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.top-m1 {
+    display: flex;
+}
+
+.top-m2 {
+    display: flex;
+}
+

@@ -11517,7 +11517,7 @@ body {
   box-shadow: 0 2px 2px -2px #0E1119;
   margin: 0 auto;
   padding-top: 4px;
-  background: #fffefa linear-gradient(45deg, #e91e63, #ffeb3b);
+  background: #fffefa linear-gradient(45deg, #101214, #373b3e);
   /* background: #fffefa linear-gradient(45deg, #3f3f3f, #e0e0e6); */
   /* background: #fffefa linear-gradient(45deg, #03a9f4, #8bc34a); */
 }
@@ -11535,5 +11535,6 @@ body {
   margin: 7px 22px 7px 10px;
   border-radius: 2px;
   border: 0;
+  outline: none;
 }
 /* 검색관련 end */

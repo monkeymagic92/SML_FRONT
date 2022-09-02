@@ -7,10 +7,10 @@
     <title>Document</title>
 
     <!-- 기본indexTemp.css -->
-    <link rel="stylesheet" href="css/indexTemp.css"/>    
+    <link rel="stylesheet" href="css/style.css"/>    
 
     <!-- 중앙부에 게속 css로 꾸밀 미들부분 (href에 css네임 게속 바꿔서 넣기) -->
-    <link rel="stylesheet" href="css/myOption.css"/>    
+    <link rel="stylesheet" href="css/quoteIndex.css"/>    
 
     <!-- 구글 아이콘 -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -152,17 +152,91 @@
                         <!-- include area -->
                         <p class="mb-0">
                             <div class="card-body">
-                                <!-- jytest 템플릿 안에 들어갈 html (model.addAttribute("view", ...)) -->
-                                <p class="mb-0">
 
-                                    <!-- 해당 div부터 인텔리제이 jsp에 복붙하면 됨 -->
-                                    <div class="container">
-                                        <div>
-                                            여기서 각종 화면단 만들기
+
+                                <!-- jytest 템플릿 안에 들어갈 html (model.addAttribute("view", ...)) -->                                
+                                <p class="mb-0">
+                                    <!-- **************************************************************** -->
+                                    <!-- **************************************************************** -->
+
+                                    <h3 id="quoteIndexTitle">
+                                        <span style="color: #CCCCCC; font-weight: bold;">Auto My CoinList</span>
+                                    </h3>
+                                    
+                                    <div class="top">
+                                        <div class="top-m1">
+                                            <span>조회된 코인수 : </span><span>41</span>
+                                        </div>
+                                        <!-- searchUP_DOWN 파라미터에 따라 보여주기/감추기 작동하게끔 수정하기 -->
+                                        <div class="top-m2">
+                                            <span>총 수익/손실금 : </span><span>-561,243</span>
                                         </div>
                                     </div>
-
-
+                                    
+                                    <!-- 자동거래여부 ajax 관련 form -->
+                                    <form id="tradeUseForm" name="tradeUseForm" method="post">
+                                        <input type="hidden" id="MARKET" name="MARKET" value="" />
+                                        <input type="hidden" id="TRADE_USE_YN" name="TRADE_USE_YN" value="" />
+                                    </form>
+                                    
+                                    <!-- 조회 form -->
+                                    <div class="searchBox">
+                                        <form id="searchForm" name="searchForm" method="post">
+                                            <span style="font-weight: bold;">상승(UP) | 하락(Down)</span>
+                                            <select class="ctl_input_1" name="searchUP_DOWN" onchange="fnSearch();" style="cursor: pointer; font-size: 1em;">
+                                                <option id="UP" value="UP">상승</option>
+                                                <option id="DOWN" value="DOWN" selected>하락</option>
+                                            </select>
+                                            <span style="font-weight: bold;">자동거래유무(Y/N)</span>
+                                            <select class="ctl_input_1" name="searchTRADE_USE_YN" onchange="fnSearch();" style="cursor: pointer; font-size: 1em;">
+                                                <option id="Y" value="Y" selected>Y</option>
+                                                <option id="N" value="N">N</option>
+                                            </select>
+                                            <button type="button" class="btn btn-primary" id="btnSearch" name="btnSearch"><i class="fas fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                    
+                                    <table class="quoteIndexContainer">
+                                        <colgroup>
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                            <col width="10.5%">
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th><h1>마켓</h1></th>
+                                            <th><h1>한글이름</h1></th>
+                                            <th><h1>매수금액(KRW)</h1></th>
+                                            <th><h1>하락/상승률(%)</h1></th>
+                                            <th><h1>수익/손실금</h1></th>
+                                            <th><h1>펌핑</h1></th>
+                                            <th><h1>자동거래여부</h1></th>
+                                            <th><h1>자동거래여부</h1></th>
+                                            <th><h1>자동거래여부</h1></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="selectList">
+                                            <tr>
+                                                <td id="rnum">CCC</td>
+                                                <td id="market" onclick="fnMoveToUpbit('${list.MARKET}');">AAA</td>
+                                                <td id="kor_nm">CCC</td>
+                                                <td id="low_price">CCC</td>
+                                                <td id="opening_price">CCC</td>
+                                                <td id="high_price">CCC</td>
+                                                <td id="rise_price" style="color: red;">CCC</td>
+                                                <td id="change">CCC</td>
+                                                <td><button id="openPumpModal" name="openPumpModal" type="button" onclick="fnOpenPump('${list.MARKET}');">pump</button></td>
+                                            </tr>                                            	
+                                        </tbody>
+                                    </table>
+                                    <!-- **************************************************************** -->
+                                    <!-- **************************************************************** -->
                                 </p>
                             </div>
                         </p>
@@ -208,6 +282,11 @@
 
 
     <script type="text/javascript">
+
+        $(document).ready(function() {
+        
+        });
+
 
         /**			Top 버튼 Start 		**/
         let Top = document.querySelector('#topBtn');
